@@ -77,7 +77,7 @@ function loadImage() {
         // ctx.drawImage(baseimg, 0, 400, 500, 100);
         ctx.font = "30px Arial";
         ctx.fillStyle = "black";
-        ctx.fillText(subject.value, 195, 440);
+        ctx.fillText(subject.value, 170, 440);
         console.log('helloworld');
     }
     drawText();
