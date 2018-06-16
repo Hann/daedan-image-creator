@@ -9,6 +9,7 @@ window.onload = function() {
 
     document.getElementById('download').addEventListener('click', function() {
         downloadCanvas(this, 'main-canvas', 'daedan.png');
+        console.log("Download")
     }, false);
     // onclick='loadImage();'
     document.getElementById('btnLoad').addEventListener('click', function() {
@@ -18,6 +19,8 @@ window.onload = function() {
 
 function loadImage() {
     var input, file, fr, img;
+    var baseimg = document.getElementById("bottom-img")
+
 
     if (typeof window.FileReader !== 'function') {
         write("The file API isn't supported on this browser yet.");
@@ -66,15 +69,18 @@ function loadImage() {
         var ctx = canvas.getContext("2d");       	
         var subject = document.getElementById("text-subject");            
 //            var etc = document.getElementById("text-etc");
+        ctx.drawImage(baseimg, 0, 400, 500, 100);
         ctx.font = "30px Arial";
         ctx.fillStyle = "black";
-        ctx.fillText(subject.value, 167, 440);
+        ctx.fillText(subject.value, 30, 440);
         console.log('helloworld');
     }
     drawText();
 }
 
 function downloadCanvas(link, canvasId, filename) {
-    link.href = document.getElementById(canvasId).toDataURL();
-    link.download = filename;
+    var a = document.getElementById('download-anchor');
+    a.download = filename;
+    a.href = document.getElementById(canvasId).toDataURL();
+    a.click();
 }
