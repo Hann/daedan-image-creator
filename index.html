@@ -3,22 +3,72 @@
     <head>
         <meta charset="utf-8">
         <title>대단한 사람이란</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script src="generator.js"></script>	
     </head>
     <body>
-        <p>대단하신분들...항상 존경합니다</p>
-        <canvas id="main-canvas" width="500px" height="500px" style="width:500px; height:500px;">
-        </canvas>
-        <form action='#' onsubmit="return false;">
-            <input type='file' id='imgfile' />
-            <input id="text-subject" placeholder="할말">
-            <input type='button' id='btnLoad' value='실행'/>
-            <a id="download"><input type="button" value="저장"></a>
-            <!-- <input type='button' id='save' value='저장' onclick='saveImage();' />     -->
-        </form>
-
-        <div style="display:none">
-        <img id="bottom-img" src="./daedan.jpg" style="width:500px;height:100px">
+        <div id="container">
+            <!-- Always shows a header, even in smaller screens. -->
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                <header class="mdl-layout__header">
+                    <div class="mdl-layout__header-row">
+                        <!-- Title -->
+                        <span class="mdl-layout-title">대단하신분들...항상 존경합니다</span>
+                        <!-- Add spacer, to align navigation to the right -->
+                        <div class="mdl-layout-spacer"></div>
+                        <!-- Navigation. We hide it in small screens. -->
+                        <nav class="mdl-navigation mdl-layout--large-screen-only">
+                        </nav>
+                    </div>
+                </header>
+                <div class="mdl-layout__drawer">
+                    <span class="mdl-layout-title">리스펙</span>
+                    <nav class="mdl-navigation">
+                    </nav>
+                </div>
+                <main class="mdl-layout__content">
+                    <div class="page-content">
+                        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__title">
+                                <canvas id="main-canvas" width="500px" height="500px" />
+                            </div>
+                            
+                            <div class="mdl-card__actions mdl-card--border">
+                                <div class="form">
+                                    <input type='file' id='imgfile' />
+                                    <div class="submit-row">
+                                        <div class="left">
+                                            <div class="mdl-textfield mdl-js-textfield">
+                                                <input class="mdl-textfield__input" type="text" id="text-subject">
+                                                <label class="mdl-textfield__label" for="text-subject">할말</label>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <button id="btnLoad" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                                변환
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <!-- <input type='button' id='save' value='저장' onclick='saveImage();' />     -->
+                                </div>
+                            </div>
+                            <div class="mdl-card__menu">
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id="download">
+                                    <i class="material-icons">save</i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="hidden-items">
+                            <img id="bottom-img" src="./daedan.jpg" style="width:500px;height:100px">
+                            <a id="download-anchor" />
+                        </div>
+                    </div>
+                </main>
+            </div>
         </div>
-        <script src="generator.js"></script>	
+        
     </body>
 </html>
