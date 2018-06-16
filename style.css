@@ -1,0 +1,61 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+    font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+span, input, button {
+    font-family: 'Noto Sans KR', sans-serif !important;
+}
+.canvas {
+    display: inline-block;
+}
+
+canvas#main-canvas {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+
+.form {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.submit-row {
+    display: flex;
+}
+.submit-row .left {
+    float: left;
+}
+.submit-row .right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+} 
+
+#btnLoad {
+    margin: 20px 0;
+}
+button#download i {
+    color: black;
+}
+
+.demo-card-wide.mdl-card {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 550px;
+}
+.demo-card-wide > .mdl-card__menu {
+    color: #fff;
+}
+
+.hidden-items {
+    display: none;
+}
