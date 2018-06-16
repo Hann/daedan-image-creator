@@ -1,4 +1,4 @@
-window.onload = function() {
+function drawBackGround() {
     var canvas = document.getElementById("main-canvas");
     var context = canvas.getContext("2d");
     var img = document.getElementById("bottom-img")
@@ -6,16 +6,21 @@ window.onload = function() {
     context.font = "30px Arial";
     context.fillStyle = "red";
     context.fillText("대단하신 분", 30, 440);
+}
 
+window.onload = function() {
+    drawBackGround();
     document.getElementById('download').addEventListener('click', function() {
         downloadCanvas(this, 'main-canvas', 'daedan.png');
         console.log("Download")
     }, false);
     // onclick='loadImage();'
     document.getElementById('btnLoad').addEventListener('click', function() {
+        drawBackGround();
         loadImage();
     }, false);
 }
+
 
 function loadImage() {
     var input, file, fr, img;
@@ -69,10 +74,10 @@ function loadImage() {
         var ctx = canvas.getContext("2d");       	
         var subject = document.getElementById("text-subject");            
 //            var etc = document.getElementById("text-etc");
-        ctx.drawImage(baseimg, 0, 400, 500, 100);
+        // ctx.drawImage(baseimg, 0, 400, 500, 100);
         ctx.font = "30px Arial";
         ctx.fillStyle = "black";
-        ctx.fillText(subject.value, 30, 440);
+        ctx.fillText(subject.value, 195, 440);
         console.log('helloworld');
     }
     drawText();
